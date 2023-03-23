@@ -15,10 +15,17 @@ function generatePassword() {
   var upperCase = window.confirm("Would you like to use capital letters?");
   var lowerCase = window.confirm("Would you like to use lowercase letters?");
   var specialCharaters = window.confirm("would you like to use special charaters?");
-  var charaters = window.prompt("How mand charaters would you like your pasword to have?");
+  var charaters = window.prompt("How mand charaters between (8 and 128) would you like your pasword to have?");
   if (Number.isNaN(charaters)) {
     alert('Password length must be provided as a number');
     return null;
+  }
+  if (charaters <= 8){
+     alert("Your password must be between 8 and 128 charaters.");
+     return null;
+  } else if( charaters >= 128){
+    alert("Your password must be between 8 and 128 charaters.");
+     return null;
   }
   if(numbers == false && specialCharaters == false && upperCase == false && lowerCase == false ){
     return null;
